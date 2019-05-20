@@ -8,8 +8,7 @@ module.exports = {
     },
   devServer:{
     contentBase: './static',
-    port: 3001,
-    hot: true
+    port: 3001
   },
 	module: {
 		rules: [{
