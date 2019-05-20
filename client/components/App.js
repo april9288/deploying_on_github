@@ -5,7 +5,7 @@ const App = () => {
 	return(
 		<section className="james">
 
-			Hello React!!!
+			Hello Github!!!
 
 		</section>
 		)

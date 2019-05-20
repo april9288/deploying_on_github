@@ -1,8 +1,8 @@
 {
-  "name": "git_deploy_test",
+  "name": "deploying_on_github",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://april9288.github.io/git_deploy_test/",
+  "homepage": "https://april9288.github.io/deploying_on_github/",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open -d",
