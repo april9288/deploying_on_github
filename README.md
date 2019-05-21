@@ -25,8 +25,8 @@ npm install -D gh-pages
 ### Guide Step 2
 > Add "homepage" property into your package.json
 
-Go to your package.json file. Here, the key must be in a specifc format like below.
-"https://<YOUR_GITHUB_HANDLE>.github.io/<REPO_NAME>"
+Go to your package.json. Here, the value of the "homepage" property must be in this format below.
+"https://<YOUR_GITHUB_HANDLE>.github.io/<REPO_NAME>".
 For my case, the github handle is 'april9288'.
 And the repo name is 'deploying_on_github'
 ```
@@ -37,9 +37,9 @@ And the repo name is 'deploying_on_github'
 > Edit "script" property on the package.json
 
 Add 3 more scripts here. "build", "deploy", "publish"
-"build" will create your static file in production mode
-"deploy" will use the "gh-pages" package to create a github branch in your repo. And actually push your static files to the branch.
-"publish" will just run "build" and "deploy" sequentially.
+* "build" will create minimized static files by webpack in production mode.
+* "deploy" will use the "gh-pages" package to create a github branch in your repo. And automatically push the static files to the branch for you.
+* "publish" will just run "build" and "deploy" sequentially.
 ```
   "scripts": {
   	...
@@ -59,16 +59,19 @@ Please check your .gitignore file. For my case, it looks like this.
 ```
 
 ### Guide Step 5
-> Your are good to go!!!
+> You are good to go!!!
 
-On your terminal, please do this. So it will run "npm run build" and "npm run deploy" in sequential order.
+On your terminal, do "npm run publish". So it will run "npm run build" and "npm run deploy" in sequential order.
 ```
 npm run publish
 ```
 
-### Final check
+### Final Check Point
 
-If you can see "published" message on your terminal, then your project is officially published! Open your browser, then go to your homepage url that you added on your package.json. If you hanve any problem, then let me know anytime. 
+If you can see "Published" message on your terminal, then your project is officially published! Open your browser, then go to your homepage url that you added on your package.json. If you hanve any problem, then let me know anytime. 
+```
+Published
+```
 
 ## Meta
 
