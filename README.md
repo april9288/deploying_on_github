@@ -12,17 +12,63 @@ Github comes with an amazing service called Github Pages. It's free and easy to 
 
 So if your website has no own server and has no sensitive information, then Github Pages is the right fit for you. Now, let's go ahead and follow the guide here!
 
+Before we dive into the guide, I'm assuming that you are not using 'create-react-app'. And your react app has already bundled with webpack. And you know the difference between dev mode and production mode. Just in case you don't know the difference, then take a look at this. [webpack production mode](https://webpack.js.org/guides/production/). One of the biggest differences is that webpack production mode minifies your code by default, meaning that your code has less in size so that your website can be delivered to users faster. When it comes to minification, there are a couple of options out there. You can research later. 
 
 ### Guide Step 1
+> Download npm package gh-pages
 
-I'm assuming that you are not using 'create-react-app'. And your react app has already bundled with webpack. And you know the difference between dev mode and production mode. Just in case you don't know the difference, then take a look at this. [webpack production mode](https://webpack.js.org/guides/production/). One of the biggest differences is that webpack production mode minifies your code by default, meaning that your code has less in size so that your website can be delivered to users faster. When it comes to minification, there are a couple of options out there. You can research later. 
-
-Now, let's do this. Download a npm package called 'gh-pages'. Here's the website. [gh-pages](https://www.npmjs.com/package/gh-pages)
+Download a npm package called 'gh-pages'. Here's the website FYI. [gh-pages](https://www.npmjs.com/package/gh-pages). What is does is that it automatically creates a Github branch called 'gh-pages' which your static files will be stored. ONLY your static files.
 ```
 npm install -D gh-pages
 ```
 
+### Guide Step 2
+> Add "homepage" property into your package.json
 
+Go to your package.json file. Here, the key must be in a specifc format like below.
+"https://<YOUR_GITHUB_HANDLE>.github.io/<REPO_NAME>"
+For my case, the github handle is 'april9288'.
+And the repo name is 'deploying_on_github'
+```
+"homepage": "https://april9288.github.io/deploying_on_github/"
+```
+
+### Guide Step 3
+> Edit "script" property on the package.json
+
+Add 3 more scripts here. "build", "deploy", "publish"
+"build" will create your static file in production mode
+"deploy" will use the "gh-pages" package to create a github branch in your repo. And actually push your static files to the branch.
+"publish" will just run "build" and "deploy" sequentially.
+```
+  "scripts": {
+  	...
+    "build": "webpack -p",
+    "deploy": "gh-pages -d static",
+    "publish": "npm run build && npm run deploy"
+  }
+```
+
+### Guide Step 4
+> Check your .gitignore file
+
+Please check your .gitignore file. For my case, it looks like this. 
+```
+/node_modules
+/static
+```
+
+### Guide Step 5
+> Your are good to go!!!
+
+On your terminal, please do this. So it will run "npm run build" and "npm run deploy" in sequential order.
+```
+npm run publish
+```
+
+### Final check
+
+If you can see "published" message on your terminal, then your project is officially published! Open your browser, then go to your homepage url that you added on your package.json. If you hanve any problem, then let me know anytime. 
 
 ## Meta
 
