@@ -12,6 +12,18 @@ Github comes with an amazing service called Github Pages. It's free and easy to 
 
 So if your website has no own server and has no sensitive information, then Github Pages is the right fit for you. Now, let's go ahead and follow the guide here!
 
+
+### Guide Step 1
+
+I'm assuming that you are not using 'create-react-app'. And your react app has already bundled with webpack. And you know the difference between dev mode and production mode. Just in case you don't know the difference, then take a look at this. [webpack production mode](https://webpack.js.org/guides/production/). One of the biggest differences is that webpack production mode minifies your code by default, meaning that your code has less in size so that your website can be delivered to users faster. When it comes to minification, there are a couple of options out there. You can research later. 
+
+Now, let's do this. Download a npm package called 'gh-pages'. Here's the website. [gh-pages](https://www.npmjs.com/package/gh-pages)
+```
+npm install -D gh-pages
+```
+
+
+
 ## Meta
 
 James Jongho Kim 
